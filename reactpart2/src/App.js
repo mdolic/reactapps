@@ -17,17 +17,25 @@ class App extends React.Component{
   constructor(){
       super();
       this.state={
-          name: 'mirzet',
-          age:25
+          isLoggedIn: true
       }
   }
     render(){
+      let displayLoggedIn;
+            if(this.state.isLoggedIn === true){
+                displayLoggedIn = 'In';
+            }else{
+            displayLoggedIn = 'Out';
+            }
+
         return(
             <div>
-                <h1>{this.state.name}</h1>
-                <h1>{this.state.age} years old</h1>
+               { /*<h1> Your are currently logged {this.state.isLoggedIn ? 'In' : 'Out'}</h1>*/}
+               <h1> Your are currently logged {displayLoggedIn}</h1>
             </div>
         )
+
+
 
     }
 }
