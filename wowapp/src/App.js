@@ -44,4 +44,19 @@ const productComponents = vschoolProducts.map(item =>
     )
 }
 
+class App extends React.Component(){
+    render(){
+        const date = new Date();
+        return(
+            <div>
+                <h1> class app component goes here
+
+                {date}
+
+                </h1>
+            </div>
+        )
+    }
+}
+
 export default App;
