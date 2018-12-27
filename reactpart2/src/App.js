@@ -1,4 +1,7 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import Header from './component/Header';
+import Greeting from './component/Greeting';
 
 /*
     function App(props){
@@ -9,11 +12,14 @@ import React from 'react';
         )
     }
 */
-class App extends React.Component(){
+class App extends React.Component{
     render(){
         return (
             <div>
-                <h1>{this.props.whatever}</h1>
+                <Header
+                    username="mirzet"
+                />
+                <Greeting/>
             </div>
         )
     }
