@@ -13,15 +13,22 @@ import Greeting from './component/Greeting';
     }
 */
 class App extends React.Component{
+
+  constructor(){
+      super();
+      this.state={
+          name: 'mirzet',
+          age:25
+      }
+  }
     render(){
-        return (
+        return(
             <div>
-                <Header
-                    username="mirzet"
-                />
-                <Greeting/>
+                <h1>{this.state.name}</h1>
+                <h1>{this.state.age} years old</h1>
             </div>
         )
+
     }
 }
 
