@@ -4,10 +4,10 @@ import React from 'react';
 function TodoItem(props){
     return(
         <div className="todo-item">
-            <input type="checkbox"/>
+            <input
+            type="checkbox"checked={props.item.completed}
+            onChange={()=> console.log("changed!")}/>
              <p>{props.todoitem.text}</p>
-
-
         </div>
     )
 }
