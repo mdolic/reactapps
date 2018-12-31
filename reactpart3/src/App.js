@@ -1,37 +1,27 @@
-import React from 'react';
+import React, {Component} from 'react';
+import Conditional from './components/Conditional';
 
-class App extends React.Component{
+class App extends Component{
 
 constructor(){
     super();
     this.state = {
-        count: 0,
-        doubleCount: 0
+        isLoading: true
     }
-    this.clickMe = this.clickMe.bind(this)
-    this.doubleClick = this.doubleClick.bind(this)
 }
-    clickMe(){
-          this.setState (prevState =>{
-              return {
-                  count: prevState.count + 2,
-                  //doubleCount: prevState.count * 2//dont need {this}
-              }
-          })
-    };
-    // doubleClick(){
-    //     this.setState(prevState2 =>{
-    //         return {
-    //             doubleCount: prevState2.doubleCount + 2
-    //         }
-    //     })
-    // }
+componentDidMount(){
+    setTimeout(() =>{
+        this.setState({
+            isLoading: false
+        })
+    }, 1500)
+}
     render(){
 
         return(
             <div>
-              <h1>{this.state.count}</h1>
-              <button onClick={this.clickMe}>Change!</button>
+             <Conditional isLoading={this.state.isLoading}/>
+
             </div>
         )
     }
