@@ -14,27 +14,24 @@ constructor(){
     clickMe(){
           this.setState (prevState =>{
               return {
-                  count: prevState.count + 1,
+                  count: prevState.count + 2,
                   //doubleCount: prevState.count * 2//dont need {this}
               }
           })
     };
-    doubleClick(){
-        this.setState(prevState2 =>{
-            return {
-                doubleCount: prevState2.doubleCount + 2
-            }
-
-        })
-    }
+    // doubleClick(){
+    //     this.setState(prevState2 =>{
+    //         return {
+    //             doubleCount: prevState2.doubleCount + 2
+    //         }
+    //     })
+    // }
     render(){
 
         return(
             <div>
-              <h1>{this.state.count} {this.state.doubleCount}</h1>
+              <h1>{this.state.count}</h1>
               <button onClick={this.clickMe}>Change!</button>
-
-            <button onClick={this.doubleClick}>Double Click</button>
             </div>
         )
     }
