@@ -3,8 +3,8 @@ import Table from './Table';
 
 class App extends React.Component{
 
-    render(){
-        const characters = [
+    state={
+        characters: [
             {
                 name: 'lin',
                 job:'designer'
@@ -22,11 +22,27 @@ class App extends React.Component{
                 job:'fullstack'
             }
 
-        ];
+        ]
+    };
 
+removeCharacter = index =>{
+    const {characters} = this.state;
+
+    this.setState({
+        characters: characters.filter((character, i)=>{
+            return i !== index;
+        })
+    });
+}
+    render(){
+
+        const {characters} = this.state;
         return(
             <div className="container">
-                <Table charactersData = {characters} />
+                <Table
+                    charactersData = {characters}
+                    removeCharacter = {this.removeCharacter}
+                />
 
             </div>
         )
