@@ -5,7 +5,7 @@ const app = document.getElementById('root');
 const container = document.createElement('div');
 container.setAttribute('class', 'container');
 
-//app.appendChild(logo);
+//app.appendChild(logo);fff
 app.appendChild(container);
 
 
