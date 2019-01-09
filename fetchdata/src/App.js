@@ -6,27 +6,40 @@ class App extends Component{
   constructor(){
     super();
     this.state = {
-      isLoading: false,
-        character: {
-
-        }
+        isLoading: false,
+        character: { },
+        firstName:""
 
     }
+   this.handleChange = this.handleChange.bind(this)
   }
-  componentDidMount(){
-    this.setState({isLoading:true})
-    fetch('https://swapi.co/api/people/1')
-    .then(response =>response.json())
-    .then(data => {
-        this.setState({
-            character: data
-        });
-    });
+  // componentDidMount(){
+  //   this.setState({isLoading:true})
+  //   fetch('api link goes here')
+  //   .then(response =>response.json())
+  //   .then(data => {
+  //       this.setState({
+  //           isLoading: false,
+  //           character: data
+  //       });
+  //   });
+  // }
+
+  handleChange(event){
+      this.setState({
+        firstName: event.target.value
+      });
   }
   render(){
+    const text = this.state.isLoading ? "Loading..." : this.state.name;
     return(
       <div>
-          {this.state.character.name}
+         <p>{text}</p>
+        <br></br>
+      <form>
+        <input type="text" placeholder="First Name" onChange={this.handleChange}/>
+        <h1>{this.state.firstName}</h1>
+      </form>
       </div>
     )
   }
